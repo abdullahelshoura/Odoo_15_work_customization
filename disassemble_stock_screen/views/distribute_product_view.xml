@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="views_distribute_product_form" model="ir.ui.view">
+            <field name="name">distribute.product.form</field>
+            <field name="model">distribute.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" nolabel="1"
+                               statusbar_visible="draft,confirmed"/>
+                        <button name="action_confirm" string="Confirm" states="draft" type="object"
+                                class="oe_highlight" attrs="{'invisible': [('state', '=', 'confirmed')]}"/>
+                    </header>
+                    <sheet>
+                        <field name="name" class="font-weight-bold" style="font-size: 25px; color: black;"/>
+                        <group class="mt-5">
+                            <group>
+                                <field name="stock_delivery_id" domain="[('code', '=', 'outgoing')]" attrs="{'readonly': [('state', '=', 'confirmed')]}"/>
+                                <field name="stock_receipt_id" domain="[('code', '=', 'incoming')]" attrs="{'readonly': [('state', '=', 'confirmed')]}"/>
+                                <field name="sale_order_id" attrs="{'readonly': [('state', '=', 'confirmed')]}"/>
+                                <field name="partner_id" readonly="1" force_save="1" attrs="{'readonly': [('state', '=', 'confirmed')]}"/>
+                                <field name="product_id" attrs="{'readonly': [('state', '=', 'confirmed')]}"/>
+                                <field name="quantity" attrs="{'readonly': [('state', '=', 'confirmed')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Product Line" name="product_lines">
+                                <field name="distribute_product_line_ids" attrs="{'readonly': [('state', '=', 'confirmed')]}">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="actions_distribute_product_action" model="ir.actions.act_window">
+            <field name="name">Disassemble</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">distribute.product</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_distribute_product"
+                  name="Disassemble"
+                  parent="stock.menu_stock_warehouse_mgmt"
+                  action="actions_distribute_product_action"
+                  sequence="5"/>
+
+    </data>
+</odoo>
+
+
+
