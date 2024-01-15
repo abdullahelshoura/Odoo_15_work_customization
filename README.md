@@ -54,3 +54,10 @@ in table line >> New 3 Field >>
 3- Internal Type >>  يتم اختيار من حركات المخازن الخاصة برقم امر البيع اوا لصيانة الذي تم اختياره في رقم 2 والمحولة الي مخزن الذي تتم منه العملية.. ويتم تسجيل المنتجات المسجلة به تلقائيا في الجدول تحت 
  
 ]
+
+
+ **disassemble_stock_screen** :
+ [
+ create new screen in stock.picking model named Dissasemble it makes the opposite of the operation that done in manufacturing module (mrp)
+ it takes a product and separate it to multiple products passing with stock moves cyles
+ 
