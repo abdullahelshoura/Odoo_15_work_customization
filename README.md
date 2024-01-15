@@ -13,6 +13,10 @@ when i check on vendor create and display  new tab >> named (بيانات الم
  when i check on customer create and display new tab >> named (بيانات العميل ) .. and contain the following field اسم بنك المورد - عنوان بنك المورد - رقم الحساب - Ibn Number - Swift Number ]
 
 
+**sale_order_inherit** :
+add new screen called Maintenance list its inherit sale order view creating different sequence and different in functionality while invoicng as it doesn`t need to make delivery step to create invoice 
+and add some new fields in sale order lines 
+
 
 
  **stock_inherit** :
