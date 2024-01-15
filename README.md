@@ -61,3 +61,8 @@ in table line >> New 3 Field >>
  create new screen in stock.picking model named Dissasemble it makes the opposite of the operation that done in manufacturing module (mrp)
  it takes a product and separate it to multiple products passing with stock moves cyles
  
+ 
+ **purchase_order_report** :
+ [
+ purchase order report customizations
+ 
