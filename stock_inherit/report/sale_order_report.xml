@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_invoice_document">
+
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="header" style="font-weight: bold;">
+                        <div style="border-bottom:1.5px solid black;padding-bottom:10px;">
+                            <img src='/web/binary/company_logo' class="" style="width:100px;"
+                                 alt="Logo"/>
+                        </div>
+                        <div style="margin-top:5px;">
+                            <span t-esc="doc.company_id.name"/>
+                            <br/>
+                            <span t-esc="doc.company_id.street"/>
+                        </div>
+                    </div>
+
+                    <div class="page" style="position:absolute;top:100px;">
+                        <h2 align="left" style="color: red;">
+                            <t t-esc="doc.name"/>
+                        </h2>
+                        <div class="row" style="font-size:16px;">
+                            <div class="col-3">
+                                <span style="font-weight: bold;">Shipping Date</span>
+                                <br/>
+                                <span t-esc="doc['scheduled_date']" style="font-size: 14px;"/>
+                            </div>
+                            <div class="col-3">
+                                <span style="font-weight: bold;">From</span>
+                                <br/>
+                                <span t-esc="doc['location_id'].name" style="font-size: 14px;"/>
+
+                            </div>
+                            <div class="col-3">
+                                <span style="font-weight: bold;">To</span>
+                                <br/>
+                                <span t-esc="doc['partner_id'].name" style=" font-size: 14px;"/>
+
+                            </div>
+                            <div class="col-3">
+                                <span style="font-weight: bold;">Creator</span>
+                                <br/>
+                                <span t-esc=" doc['create_uid'].name" style=" font-size: 14px;"/>
+
+                            </div>
+                        </div>
+
+
+                        <table style="width:100%; border: 1px solid black; margin-top: 60px;">
+                            <thead>
+                                <tr>
+                                    <th style="max-width:10%; border: 1px solid black; font-weight: bold;"
+                                        class="text-center">
+                                        <span>Product</span>
+                                    </th>
+                                    <th style="max-width:10%; border: 1px solid black; font-weight: bold;"
+                                        class="text-center">
+                                        <span>Note</span>
+                                    </th>
+                                    <th style="max-width:10%; border: 1px solid black; font-weight: bold;"
+                                        class="text-center">
+                                        <span>Reference</span>
+                                    </th>
+                                    <th style="max-width:10%; border: 1px solid black; font-weight: bold;"
+                                        class="text-center">
+                                        <span>Quantity</span>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="invoice_tbody" style="border: 1px solid black; ">
+                                <t t-foreach="doc.move_lines" t-as="line">
+
+                                    <tr>
+
+
+                                        <td style="max-width:10%; border: 1px solid black; " class="text-center">
+                                            <span t-field="line.product_id.name"/>
+
+                                        </td>
+                                        <td style="max-width:10%; border: 1px solid black; " class="text-center">
+                                            <span t-field="line.note_line"/>
+
+                                        </td>
+                                        <td style="max-width:10%;border: 1px solid black; " class="text-center">
+                                            <span t-field="line.default_code"/>
+
+                                        </td>
+                                        <td style="max-width:10%; border: 1px solid black; " class="text-center">
+                                            <span t-field="line.quantity_on_hand"/>
+
+                                        </td>
+
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 100px;">
+                            <div>
+                                <p style="text-align: right; font-weight: bold;">
+                                    /الضمان
+                                </p>
+                            </div>
+                            <br/>
+
+                            <div style="text-align: right; font-weight: bold;">
+                                <p>
+                                    نضمن البضاعه المذكوره عاليه لمده عام من الاستلام ضد عيوب الصناعه او الخامه و ليس ضد
+                                    سوء
+                                    الاستخدام او الكسر المباشر للبضاعه الجديده
+                                </p>
+                                <br/>
+                                <p>
+                                    نضمن البضاعه المذكوره عاليه لمده ثلاثه أشهر من الاستلام ضد عيوب الصناعه او الخامه
+                                    وليس
+                                    ضد
+                                    سوء
+                                    الاستخدام أو الكسر المباشر للصيانه
+                                </p>
+                                <br/>
+                                <p>
+                                    طبقا لقانون حمايه المستهلك:البضاعه المباعه لا ترد ولا تستبدل الا فى خلال 14 يوم من
+                                    تاريخ
+                                    الاستلام
+                                </p>
+                                <p>
+                                    استلمت البضاعة عاليه بحالة جيدة وسليمة واصبحت مسئولا مسئولية كاملة عنها بعد المعاينة
+                                    المبدئية
+                                </p>
+                            </div>
+                            <div style="width:100%; margin-top: 70px; font-weight: bold;">
+                                <p>
+                                    <span style="float: right;">....................:المخازن</span>
+                                    <span style="float: left;">...................: اسم المستلم</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="action_print_invoicec_document" model="ir.actions.report">
+        <field name="name">Sale Order</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">stock_inherit.report_invoice_document</field>
+        <field name="binding_model_id" ref="model_stock_picking"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

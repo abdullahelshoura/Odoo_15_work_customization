@@ -8,10 +8,14 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='picking_type_id']" position="after">
                 <field name="so"
-                       attrs="{'invisible': [('picking_type_receipt','!=',True),('picking_type_code','!=','internal')]}"/>
+                       attrs="{'invisible': [('picking_type_delivery','!=',True),('picking_type_receipt','!=',True),('picking_type_internal','!=',True)]}"/>
                 <field name="internal_type" widget="many2many_tags"/>
+                <field name="internal_length" invisible="1"/>
                 <field name="work_order"/>
                 <field name="picking_type_receipt" invisible="1"/>
+                <field name="picking_type_delivery" invisible="1"/>
+                <field name="picking_type_internal" invisible="1"/>
+
             </xpath>
 
             <xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='product_id']"
@@ -23,7 +27,7 @@
 
             <xpath expr="//page[@name='note']" position="after">
                 <page string="Sale Order" name="saleorder"
-                      attrs="{'invisible': [('picking_type_receipt','!=',True),('picking_type_code','!=','internal')]}">
+                      attrs="{'invisible': [('picking_type_delivery','!=',True),('picking_type_receipt','!=',True),('picking_type_internal','!=',True)]}">
                     <field name="olines">
                         <tree name="sale_order_tree" create="false">
                             <field name="product_id"/>
@@ -70,7 +74,13 @@
         <field name="inherit_id" ref="stock.view_picking_type_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='code']" position="after">
-                <field name="receipt_type" attrs="{'invisible': [('code','!=','incoming')]}"/>
+                <field name="receipt_type_rec" attrs="{'invisible': [('code','!=','incoming')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="receipt_type_del" attrs="{'invisible': [('code','!=','outgoing')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="receipt_type_int" attrs="{'invisible': [('code','!=','internal')]}"/>
             </xpath>
         </field>
     </record>

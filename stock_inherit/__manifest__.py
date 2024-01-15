@@ -14,7 +14,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/stock_views_inherit.xml',
-        'reports/sale_order_report.xml'
+        'report/sale_order_report.xml',
+
 
     ],
 }
