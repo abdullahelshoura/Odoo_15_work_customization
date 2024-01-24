@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="purchase_order_report_inherit" inherit_id="purchase.report_purchaseorder_document">
 
@@ -7,57 +8,75 @@
         </xpath>
 
         <xpath expr="//t[@t-call='web.basic_layout']" position="inside">
+            <t t-set="o_sec" t-value="o.with_context(lang='ar_001')"/>
+            <t t-set="o" t-value="o.with_context(lang='en_US')"/>
             <div class="header" style="border:2px solid black;color : #032D7A;">
-                <div class="row" style="height:155px;">
-                    <div class="col-6" style="report_header_style">
-                        <div>
-                            <h2 style="display:inline;font-weight:800;">Global Star</h2>
-                            <h2 style="display:inline;font-weight:800;color:#025419;">Trading L.L.C.</h2>
+                <div class="row" style="">
+                    <div class="col-7" style="report_header_style">
+                        <div class="row">
+                            <div class="col-9">
+                                <div style="">
+                                    <h2 style="font-size:30px;display:inline;font-weight:800;">Global Star</h2>
+                                    <h2 style="font-size:30px;display:inline;font-weight:800;color:#025419;">Trading L.L.C.</h2>
+                                </div>
+                                <div style="height:10px;"/>
+                                <strong style="display:block;">Al-Kamil Street Mohammadiya Area</strong>
+                                <strong style="display:block;">King Saud Road Dammam - KSA</strong>
+                                <strong style="display:block;color:red;">VAT Number 310472831300003</strong>
+                                <strong style="display:block;">C.R Number 2050072809</strong>
+                                <div style="height:10px;"/>
+                            </div>
+                            <div class="col-3" style="padding-left:0px;report_header_style;">
+                                <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                     style="margin-top:15px;max-height: 120px;" alt="Logo"/>
+                            </div>
                         </div>
-                        <div style="height:7px;"></div>
-                        <strong style="display:block;">Al-Kamil Street Mohammadiya Area</strong>
-                        <strong style="display:block;">King Saud Road Dammam - KSA</strong>
-                        <strong style="display:block;color:red;">VAT Number 310472831300003</strong>
-                        <strong style="display:block;">C.R Number 2050072809</strong>
-                    </div>
-                    <div class="col-2" style="report_header_style;" >
-                        <img src='/web/binary/company_logo' class="" style="width:98%; margin-top:25px;" alt="Logo"/>
-<!--                        <img class="img" src="/purchase_order_report/static/src/img/icon.jpeg" style="width:90%;margin-top:15px;" />-->
-                    </div>
-                    <div class="col-4" style="report_header_style" align="right">
-                        <div>
-                            <span style="display:inline;font-weight:800;">شركة نجمة العالم</span>
-                            <span style="display:inline;font-weight:800;color:#025419;"> للتجارة ذ.م.م</span>
-                        </div>
-                        <div style="height:7px;"></div>
-                        <span style="display:block;font-weight:500;">شارع الكميل - حي المحمدية</span>
-                        <span style="display:block;font-weight:500;">شارع الملك سعود - الدمام - المملكة العربيةالسعودية</span>
 
                     </div>
+                    <div class="col-5" style="report_header_style;font-weight:400;" align="right">
+                        <div>
+                            <span style="display:inline;font-weight:800;">شركة نجمة العالم</span>
+                            <span style="display:inline;font-weight:800;color:#025419;">للتجارة ذ.م.م</span>
+                        </div>
+                        <div style="height:7px;"/>
+                        <span style="display:block;font-weight:500;">شارع الكميل - حي المحمدية</span>
+                        <span style="display:block;font-weight:500;">شارع الملك سعود - الدمام - المملكة
+                            العربيةالسعودية
+                        </span>
+
+                    </div>
+
                 </div>
             </div>
 
             <div class="footer">
                 <div>
-                    <span style="color:black;">Global Star Co.: Authorised Signatory</span><br/>
-                    <span style="color:red;margin-top:5px;">This is system generated P.O and doesn`t required any stamp or signatures</span><br/>
-                    <span style="color:red;">Quantities will be maintained as per the P.O and unit Prices will be communicated at later stage</span><br/>
+                    <span style="color:black;">Global Star Co.: Authorised Signatory</span>
+                    <br/>
+                    <span style="color:red;margin-top:5px;">This is system generated P.O and doesn`t required any stamp
+                        or signatures
+                    </span>
+                    <br/>
+                    <span style="color:red;">Quantities will be maintained as per the P.O and unit Prices will be
+                        communicated at later stage
+                    </span>
+                    <br/>
                 </div>
 
                 <div class="row text-center" style="padding-left:40px;margin-top:5px;">
-                            <span style="font-size:15px;font-weight:bold;color:#032D7A;">
-                                Dammam - Jeddah -Riyadh - Al Hassa - Buraidah - Hafar al Batin - Refah - Skaka - Khamis
-                                Mashiet - Makkah - Madinah
-                            </span><br/>
-                            <span style="margin-bottom:100px;font-size:14px;">Tel: 013-8020654, 013-8088868, 013-8021603,
-                                012-6362666, Fax: 013-8020880, 012-6781970
-                            </span>
+                    <span style="font-size:15px;font-weight:bold;color:#032D7A;">
+                        Dammam - Jeddah -Riyadh - Al Hassa - Buraidah - Hafar al Batin - Refah - Skaka - Khamis
+                        Mashiet - Makkah - Madinah
+                    </span>
+                    <br/>
+                    <span style="margin-bottom:100px;font-size:14px;">Tel: 013-8020654, 013-8088868, 013-8021603,
+                        012-6362666, Fax: 013-8020880, 012-6781970
+                    </span>
 
 
                 </div>
             </div>
         </xpath>
-
 
 
         <xpath expr="//table[1]" position="before">
@@ -81,6 +100,7 @@
                 }
 
                 table.my_tab > thead > tr > th{
+                padding-top:2px;
                 padding:0px;
                 border:2px solid black;
                 color : #032D7A;
@@ -94,7 +114,7 @@
                 }
 
                 table.my_tab > tbody > tr > td{
-                font-size:16px;
+                font-size:13px;
                 margin:0px;
                 padding:0px;
                 padding-left:2px;
@@ -120,23 +140,23 @@
 
                 }
 
-                th[name="th_no"]{
-                width:5%;
-                }
-                th[name="th_code"]{
-                width:15%;
-                }
-                th[name="th_description"]{
-                width:39%;
-                }
-                th[name="th_quantity"]{
-                width:11.5%;
-                }
+                <!--                th[name="th_no"]{-->
+                <!--                width:5%;-->
+                <!--                }-->
+                <!--                th[name="th_code"]{-->
+                <!--                width:15%;-->
+                <!--                }-->
+                <!--                th[name="th_description"]{-->
+                <!--                width:39%;-->
+                <!--                }-->
+                <!--                th[name="th_quantity"]{-->
+                <!--                width:11.5%;-->
+                <!--                }-->
                 th[name="th_price_unit"]{
-                width:12%;
+                width:8%;
                 }
                 th[name="th_amount"]{
-                width:17.5%;
+                width:12.5%;
                 }
 
                 .info{
@@ -153,13 +173,13 @@
         </xpath>
 
         <xpath expr="//div[@class='page']" position="before">
-            <div style="border:2px solid black;padding-left:3px;">
+            <div style="border:2px solid black;padding-left:3px;padding-top:30px;">
                 <h3 style="text-align:center;font-weight:bold;color : #032D7A;">PURCHASE ORDER</h3>
-                <div class="row" style="padding:0px;">
+                <div class="row" style="padding:0px;padding-top:15px;">
                     <div class="col-7" style=" color: #032D7A;" align="left">
                         <div class="row info">
                             <div style="font-size:18px;" class="col-5">
-                                <strong >Supplier Name</strong>
+                                <strong>Supplier Name</strong>
                             </div>
                             <div style="font-weight:400;color:black;" class="col-7">
                                 <span align="left" t-field="o.partner_id"/>
@@ -170,15 +190,35 @@
                                 <strong style="">Address</strong>
                             </div>
                             <div style="font-weight:400;color:black;" align="left" class="col-7">
-                                <span align="left" t-field="o.dest_address_id"/>
+                                <span align="left" t-field="o.partner_id.street"/>
+                                <t t-if="o.partner_id.street">
+                                    <span>,</span>
+                                </t>
+                                <span align="left" t-field="o.partner_id.street2"/>
+                                <t t-if="o.partner_id.street2">
+                                    <span>,</span>
+                                </t>
+                                <span align="left" t-field="o.partner_id.city"/>
+                                <t t-if="o.partner_id.city">
+                                    <span>,</span>
+                                </t>
+                                <span align="left" t-field="o.partner_id.state_id"/>
+                                <t t-if="o.partner_id.state_id">
+                                    <span>,</span>
+                                </t>
+                                <span align="left" t-field="o.partner_id.zip"/>
+                                <t t-if="o.partner_id.zip">
+                                    <span>,</span>
+                                </t>
+                                <span align="left" t-field="o.partner_id.country_id"/>
                             </div>
                         </div>
                         <div class="row info">
                             <div class="col-5">
-                                <strong style="">Vat No.</strong>
+                                <strong style="">Week No.</strong>
                             </div>
                             <div align="left" style="font-weight:400;color:black;" class="col-7">
-                                <span align="left" t-field="o.user_id"/>
+                                <span align="left" t-field="o.week_number"/>
                             </div>
 
                         </div>
@@ -195,7 +235,7 @@
                                 <strong style="">Number of Containers</strong>
                             </div>
                             <div align="left" style="font-weight:400;color:black;" class="col-7">
-<!--                                <span align="left" t-field="o.user_id"/>-->
+                                <span align="left" t-field="o.number_containers"/>
                             </div>
 
                         </div>
@@ -204,77 +244,78 @@
                                 <strong style="">Remarks</strong>
                             </div>
                             <div style="font-weight:400;color:black;" align="left" class="col-7">
-<!--                                <span align="left" t-field="o.user_id"/>-->
+                                <span align="left" t-field="o.remarks"/>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-5" style="color : #032D7A;" align="left">
-                            <div align="left" style=" width: 100%;">
-                                <div class="row info">
-                                    <div class="col-6">
-                                        <strong style="">Issue Date:</strong>
-                                    </div>
-                                    <div style="font-weight:400;color:black;" class="col-6">
-                                        <span align="left" t-field="o.date_approve" t-options="{'widget': 'date','format': 'dd/MM/yyyy'}"/>
-                                    </div>
-
+                        <div align="left" style=" width: 100%;">
+                            <div class="row info">
+                                <div class="col-6">
+                                    <strong style="">Issue Date:</strong>
                                 </div>
-                                <div class="row info">
-                                    <div class="col-6">
-                                        <strong style="">PO No.</strong>
-                                    </div>
-                                    <div style="font-weight:400;color:black;" class="col-6">
-                                        <span align="left" t-field="o.name"/>
-                                    </div>
-
+                                <div style="font-weight:400;color:black;" class="col-6">
+                                    <span align="left" t-field="o.date_approve"
+                                          t-options="{'widget': 'date','format': 'dd/MM/yyyy'}"/>
                                 </div>
-                                <div class="row info">
-                                    <div class="col-6">
-                                        <strong style="">Shipment Terms</strong>
-                                    </div>
-                                    <div style="font-weight:400;color:black;" class="col-6">
-<!--                                        <span align="left" t-field="o.user_id"/>-->
-                                    </div>
 
-                                </div>
-                                <div class="row info">
-                                    <div class="col-6">
-                                        <strong style="">Payment Terms</strong>
-                                    </div>
-                                    <div style="font-weight:400;color:black;" class="col-6">
-                                        <span align="left" t-field="o.payment_term_id"/>
-                                    </div>
-
-                                </div>
-                                <div class="row info">
-                                    <div class="col-6">
-                                        <strong style="">Currency</strong>
-                                    </div>
-                                    <div style="font-weight:400;color:black;" class="col-6">
-                                        <span align="left" t-field="o.currency_id"/>
-                                    </div>
-
-                                </div>
-                                <div class="row info">
-                                    <div class="col-6">
-                                        <strong style="">ETD:</strong>
-                                    </div>
-                                    <div style="font-weight:400;color:black;" class="col-6">
-<!--                                        <span align="left" t-field="o.user_id"/>-->
-                                    </div>
-
-                                </div>
-                                <div class="row info">
-                                    <div class="col-6">
-                                        <strong style="">ETA:</strong>
-                                    </div>
-                                    <div style="font-weight:400;color:black;" class="col-6">
-<!--                                        <span align="left" t-field="o.user_id"/>-->
-                                    </div>
-
-                                </div>
                             </div>
+                            <div class="row info">
+                                <div class="col-6">
+                                    <strong style="">PO No.</strong>
+                                </div>
+                                <div style="font-weight:400;color:black;" class="col-6">
+                                    <span align="left" t-field="o.name"/>
+                                </div>
+
+                            </div>
+                            <div class="row info">
+                                <div class="col-6">
+                                    <strong style="">Shipment Terms</strong>
+                                </div>
+                                <div style="font-weight:400;color:black;" class="col-6">
+                                    <span align="left" t-field="o.incoterm"/>
+                                </div>
+
+                            </div>
+                            <div class="row info">
+                                <div class="col-6">
+                                    <strong style="">Payment Terms</strong>
+                                </div>
+                                <div style="font-weight:400;color:black;" class="col-6">
+                                    <span align="left" t-field="o.payment_term_id"/>
+                                </div>
+
+                            </div>
+                            <div class="row info">
+                                <div class="col-6">
+                                    <strong style="">Currency</strong>
+                                </div>
+                                <div style="font-weight:400;color:black;" class="col-6">
+                                    <span align="left" t-field="o.currency_id"/>
+                                </div>
+
+                            </div>
+                            <div class="row info">
+                                <div class="col-6">
+                                    <strong style="">ETD:</strong>
+                                </div>
+                                <div style="font-weight:400;color:black;" class="col-6">
+                                    <span align="left" t-field="o.etd"/>
+                                </div>
+
+                            </div>
+                            <div class="row info">
+                                <div class="col-6">
+                                    <strong style="">ETA:</strong>
+                                </div>
+                                <div style="font-weight:400;color:black;" class="col-6">
+                                    <span align="left" t-field="o.eta"/>
+                                </div>
+
+                            </div>
+                        </div>
 
                     </div>
 
@@ -283,27 +324,6 @@
 
         </xpath>
 
-        <xpath expr="//div[@id='total']/div" position="replace">
-            <div class="col-5">
-                <table name="total_table" class="table table-sm my_tab">
-                    <tr>
-                        <td>
-                            <strong>Other Expenses</strong>
-                        </td>
-                        <td style="text-align:right;background-color: #F1E8D4;">0</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Total Amount</strong>
-                        </td>
-                        <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
-                        <td style="text-align:right;background-color: #F1E8D4;">
-                            <t t-esc="tax_totals['formatted_amount_total']"/>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </xpath>
 
         <xpath expr="//table[1]" position="attributes">
             <attribute name="class">table my_tab</attribute>
@@ -320,6 +340,9 @@
                     <th name="th_description">
                         <strong>Item Description</strong>
                     </th>
+                    <th name="th_net">
+                        <strong>Net</strong>
+                    </th>
                     <th name="th_quantity">
                         <strong>Qty</strong>
                     </th>
@@ -330,107 +353,151 @@
                         <strong>Total Amount exc. Vat</strong>
                     </th>
                 </tr>
-            </thead>
-            <thead class="text-center">
-                <tr style="">
-                    <th name="th_no_ar">
-                        <strong>التسلسلي</strong>
-                    </th>
-                    <th name="th_code_ar">
-                        <strong>الرقم</strong>
-                    </th>
-                    <th name="th_description_ar">
-                        <strong>وصف البند</strong>
-                    </th>
-                    <th name="th_quantity_ar">
-                        <strong>الكمية</strong>
-                    </th>
-                    <th name="th_price_unit_ar">
-                        <strong>سعر الوحدة بدون ضريبة القيمة المضافة</strong>
-                    </th>
-                    <th name="th_amount_ar">
-                        <strong>إجمالي السعر بدون ضريبة القيمة المضافة</strong>
-                    </th>
-                </tr>
+                <!--                <tr style="">-->
+                <!--                    <th name="th_no_ar">-->
+                <!--                        <strong>التسلسلي</strong>-->
+                <!--                    </th>-->
+                <!--                    <th name="th_code_ar">-->
+                <!--                        <strong>الرقم</strong>-->
+                <!--                    </th>-->
+                <!--                    <th name="th_description_ar">-->
+                <!--                        <strong>وصف البند</strong>-->
+                <!--                    </th>-->
+                <!--                    <th name="th_quantity_ar">-->
+                <!--                        <strong>الكمية</strong>-->
+                <!--                    </th>-->
+                <!--                    <th name="th_price_unit_ar">-->
+                <!--                        <strong>سعر الوحدة بدون ضريبة القيمة المضافة</strong>-->
+                <!--                    </th>-->
+                <!--                    <th name="th_amount_ar">-->
+                <!--                        <strong>إجمالي السعر بدون ضريبة القيمة المضافة</strong>-->
+                <!--                    </th>-->
+                <!--                </tr>-->
             </thead>
         </xpath>
         <xpath expr="//table[1]/tbody" position="replace">
             <tbody style="height:150px;">
-                    <t t-set="current_subtotal" t-value="0"/>
-                    <t t-set="i" t-value="1" />
-                    <t t-set="total_quantity" t-value="0" />
-                    <t t-set="subtotal_amountt" t-value="0" />
-                    <t t-foreach="o.order_line" t-as="line">
-                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
-                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
-                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
-                            <t t-if="not line.display_type">
-                                <td id="sequence" style="text-align:center;">
-                                    <t t-foreach="line" t-as="p">
-                                      <span t-esc="i"/>
-                                      <t t-set="i" t-value="i+1"/>
-                                    </t>
-                                </td>
-                                <td id="code">
-                                    <span t-field="line.product_id.default_code"/>
-                                </td>
-                                <td id="description">
-                                    <span t-field="line.product_id.name"/>
-                                </td>
+                <t t-set="current_subtotal" t-value="0"/>
+                <t t-set="i" t-value="1"/>
+                <t t-set="total_quantity" t-value="0"/>
+                <t t-set="subtotal_amountt" t-value="0"/>
+                <t t-set="records_number" t-value="0"/>
+                <t t-foreach="o.order_line" t-as="line_cournter">
+                    <t t-set="records_number" t-value="records_number+1"/>
+                </t>
+                <t t-foreach="o.order_line" t-as="line">
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"
+                       groups="account.group_show_line_subtotals_tax_excluded"/>
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"
+                       groups="account.group_show_line_subtotals_tax_included"/>
+                    <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                        <t t-if="not line.display_type">
+                            <td id="sequence" style="text-align:center;">
+                                <t t-foreach="line" t-as="p">
+                                    <span t-esc="i"/>
+                                    <t t-set="i" t-value="i+1"/>
+                                </t>
+                            </td>
+                            <td id="code">
+                                <span t-field="line.product_id.default_code"/>
+                            </td>
+                            <td id="description">
+                                <span t-field="line.product_id.name"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.net"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.product_qty"/>
+                                <span t-field="line.product_uom.name" groups="uom.group_uom"/>
+                                <t t-set="total_quantity" t-value="total_quantity+line.product_qty"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.price_unit"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.price_subtotal"
+                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                <t t-set="subtotal_amountt" t-value="subtotal_amountt+line.price_subtotal"/>
+                            </td>
+                        </t>
 
-                                <td class="text-right">
-                                    <span t-field="line.product_qty"/>
-                                    <span t-field="line.product_uom.name" groups="uom.group_uom"/>
-                                    <t t-set="total_quantity" t-value="total_quantity+line.product_qty"/>
-                                </td>
-                                <td class="text-right">
-                                    <span t-field="line.price_unit"/>
-                                </td>
-                                <td class="text-right">
-                                    <span t-field="line.price_subtotal"
-                                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
-                                        <t t-set="subtotal_amountt" t-value="subtotal_amountt+line.price_subtotal"/>
-                                </td>
-                            </t>
+                    </tr>
 
-                        </tr>
 
-                        <t t-if="current_section and (line_last or o.order_line[line_index+1].display_type == 'line_section')">
-                            <tr class="is-subtotal text-right">
-                                <td colspan="99" id="subtotal">
-                                    <strong class="mr16">Subtotal</strong>
-                                    <span
+                    <t t-if="current_section and (line_last or o.order_line[line_index+1].display_type == 'line_section')">
+                        <tr class="is-subtotal text-right">
+                            <td colspan="99" id="subtotal">
+                                <strong class="mr16">Subtotal</strong>
+                                <span
                                         t-esc="current_subtotal"
                                         t-options='{"widget": "monetary", "display_currency": o.currency_id}'
-                                    />
-                                </td>
-                            </tr>
-                        </t>
+                                />
+                            </td>
+                        </tr>
+
                     </t>
-                </tbody>
-        </xpath>
-        <xpath expr="//table[1]/tbody" position="after">
-            <tfoot class="text-center">
-                <tr>
+                </t>
+                <tr style="border:2px solid black;background-color: #F1E8D4;color : #032D7A;font-size : 13px bold;">
                     <td name="td_no_foot"></td>
                     <td name="td_code_foot"></td>
                     <td name="total">
                         <strong>Total</strong>
                     </td>
-                    <td name="total_quantity" style="text-align:right;"><strong><span t-esc="total_quantity"/></strong></td>
+                    <td name="total_net" style="text-align:right;">
+                        <strong>
+                            <span t-esc="o.total_net"/>
+                        </strong>
+                    </td>
+                    <td name="total_quantity" style="text-align:right;">
+                        <strong>
+                            <span t-esc="total_quantity"/>
+                        </strong>
+                    </td>
                     <td name="td_price_unit_foot">
                         <strong></strong>
                     </td>
                     <td name="total_amount" style="text-align:right;">
                         <strong>
-                            <span t-esc="subtotal_amountt" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            <span t-esc="subtotal_amountt"
+                                  t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                         </strong>
                     </td>
                 </tr>
-            </tfoot>
-        </xpath>
-    </template>
 
+            </tbody>
+            <!--            <tfoot class="text-center">-->
+            <!--                -->
+
+            <!--            </tfoot>-->
+        </xpath>
+        <!--        <xpath expr="//table[1]" position="inside">-->
+        <!--            -->
+        <!--        </xpath>-->
+
+        <xpath expr="//div[@id='total']/div" position="replace">
+            <div class="col-5">
+                <table name="total_table" class="table table-sm my_tab">
+                    <tr>
+                        <td>
+                            <strong>Other Expenses</strong>
+                        </td>
+                        <td style="text-align:right;background-color: #F1E8D4;">0</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Total Amount</strong>
+                        </td>
+                        <td style="text-align:right;background-color: #F1E8D4;">
+                            <t t-esc="subtotal_amountt"
+                               t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </xpath>
+
+    </template>
 
 
 </odoo>

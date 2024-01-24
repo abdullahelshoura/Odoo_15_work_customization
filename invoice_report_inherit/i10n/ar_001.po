@@ -1,0 +1,361 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* invoice_report_inherit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-19 08:23+0000\n"
+"PO-Revision-Date: 2024-01-19 08:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+",\n"
+"                                <br/>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+",\n"
+"                        <br/>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "--&gt;"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<br/>\n"
+"                                <strong style=\"\">C.R Number</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<br/>\n"
+"                                <strong style=\"color:red;padding-bottom:2px;\">VAT Number</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<br/>\n"
+"                        <strong style=\"\">C.R Number</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<br/>\n"
+"                        <strong style=\"color:red;padding-bottom:2px;\">VAT Number</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<span style=\"font-size:12px;font-weight:bold;color:red;\">\n"
+"                            هذه الفاتورة تم إنشاؤها بواسطة النطام. لا تحتاج إلى توقيع\n"
+"                        </span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<span style=\"font-size:15px;font-weight:bold;\">\n"
+"                            Global Star Co.: Authorised Signatory\n"
+"                        </span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<span style=\"font-size:15px;font-weight:bold;\">\n"
+"                            Receiver`s Name:\n"
+"                        </span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<span style=\"font-size:15px;font-weight:bold;\">\n"
+"                            Receiver`s Sign.:\n"
+"                        </span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<span style=\"font-size:15px;font-weight:bold;color:#032D7A;\">\n"
+"                            Dammam - Jeddah -Riyadh - Al Hassa - Buraidah - Hafar al Batin - Refah - Skaka - Khamis\n"
+"                            Mashiet - Makkah - Madinah\n"
+"                        </span>\n"
+"                        <br/>\n"
+"                        <span style=\"margin-bottom:100px;font-size:14px;font-weight:bold;\">Telephone: +966 13\n"
+"                            8088868, Email ID:\n"
+"                        </span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<span style=\"font-size:15px;font-weight:bold;color:red;\">\n"
+"                            This is a system generated invoice. No signatures required.\n"
+"                        </span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong align=\"right\" style=\"\">تاريخ الاستحقاق</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong align=\"right\" style=\"\">تاريخ الاصدار</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong align=\"right\" style=\"\">رقم أمر التسليم</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong align=\"right\" style=\"\">رقم الفاتورة</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">Address</strong>"
+msgstr ""
+g
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">Cust. CR. No.</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">DO No.</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">Due Date</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">Invoice No.</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">Issue Date:</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">Vat No.</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong style=\"\">السحل التجاري</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<strong style=\"display:block;\">Total Execl. VAT</strong>\n"
+"                                    <span>اجمالي مبلغ الفاتورة بدون ضريبة القيمة المضافة</span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<strong style=\"display:block;\">Total Inc. VAT</strong>\n"
+"                                    <span>اجمالي مبلغ الفاتورة شاملا ضريبة القيمة المضافة</span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<strong style=\"display:block;\">Total Qty.</strong>\n"
+"                                    <span>اجمالي الكمية</span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"<strong style=\"display:block;\">VAT</strong>\n"
+"                                    <span>ضريبة القيمة المضافة</span>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Code (SKU).</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Customer Name</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Item Description</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Qty</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Ser</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Total Price exc. Vat</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Total SAR</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>Unit Price exc. VAT</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>VAT %</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>VAT SAR</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>إجمالي السعر بدون ضريبة القيمة المضافة</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>اجمالي المبلغ بالريال السعودي</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>اسم العميل</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>التسلسل</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>الكمية</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>النسبة المئوية لضريبة القيمة المضافة</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>رقم الضريبة</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>رمز البند</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>سعر الوحدة بدون ضريبة القيمة المضافة</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>ضريبة القيمة المضافة بالريال السعودي</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>عنوان</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "<strong>وصف البند</strong>"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "Cancelled Invoice"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "Credit Note"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "Draft Credit Note"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid ""
+"Draft Tax\n"
+"                        Invoice"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "Draft Vendor Credit Note"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model:ir.model,name:invoice_report_inherit.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "Logo"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "Tax Invoice"
+msgstr ""
+
+#. module: invoice_report_inherit
+#: model_terms:ir.ui.view,arch_db:invoice_report_inherit.invoice_report_inherittt
+msgid "Vendor Credit Note"
+msgstr ""

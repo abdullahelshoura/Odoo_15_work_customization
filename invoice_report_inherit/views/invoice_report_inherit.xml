@@ -1,0 +1,545 @@
+<odoo>
+    <template id="invoice_report_inherittt" inherit_id="account.report_invoice_document">
+
+
+        <xpath expr="//t[@t-call='web.external_layout']" position="attributes">
+            <attribute name="t-call">web.basic_layout</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-call='web.basic_layout']" position="inside">
+            <t t-set="o_sec" t-value="o.with_context(lang='ar_001')"/>
+            <t t-set="o" t-value="o.with_context(lang='en_US')"/>
+            <div class="header" style="border-bottom:2px solid black;color : #032D7A;">
+               <div class="row" style="">
+                    <div class="col-7" style="report_header_style">
+                        <div class="row">
+                            <div class="col-9">
+                                <div style="">
+                                    <h2 style="font-size:30px;display:inline;font-weight:800;">Global Star</h2>
+                                    <h2 style="font-size:30px;display:inline;font-weight:800;color:#025419;">Trading L.L.C.</h2>
+                                </div>
+                                <div style="height:10px;"/>
+                                <strong style="display:block;">Al-Kamil Street Mohammadiya Area</strong>
+                                <strong style="display:block;">King Saud Road Dammam - KSA</strong>
+                                <strong style="display:block;color:red;">VAT Number 310472831300003</strong>
+                                <strong style="display:block;">C.R Number 2050072809</strong>
+                                <div style="height:10px;"/>
+                            </div>
+                            <div class="col-3" style="padding-left:0px;report_header_style;">
+                                <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                     style="margin-top:15px;max-height: 120px;" alt="Logo"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-5" style="report_header_style;font-weight:400;" align="right">
+                        <div>
+                            <span style="display:inline;font-weight:800;">شركة نجمة العالم</span>
+                            <span style="display:inline;font-weight:800;color:#025419;">للتجارة ذ.م.م</span>
+                        </div>
+                        <div style="height:7px;"/>
+                        <span style="display:block;font-weight:500;">شارع الكميل - حي المحمدية</span>
+                        <span style="display:block;font-weight:500;">شارع الملك سعود - الدمام - المملكة
+                            العربيةالسعودية
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer" style="border-top:1px solid black;">
+                <div class="row">
+                    <div align="left" class="col-4" style="padding-left:17px;">
+                        <span style="font-size:15px;font-weight:bold;">
+                            Receiver`s Name:
+                        </span>
+                    </div>
+                    <div align="right" class="col-3">
+                        <span style="font-size:15px;font-weight:bold;">
+                            Receiver`s Sign.:
+                        </span>
+                    </div>
+                    <div align="right" class="col-5" style="padding-right:17px;">
+                        <span style="font-size:15px;font-weight:bold;">
+                            Global Star Co.: Authorised Signatory
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div align="left" class="col-6">
+                        <span style="font-size:15px;font-weight:bold;color:red;">
+                            This is a system generated invoice. No signatures required.
+                        </span>
+                    </div>
+                    <div align="right" class="col-6">
+                        <span style="font-size:12px;font-weight:bold;color:red;">
+                            هذه الفاتورة تم إنشاؤها بواسطة النطام. لا تحتاج إلى توقيع
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <span style="font-size:15px;font-weight:bold;color:#032D7A;">
+                            Dammam - Jeddah -Riyadh - Al Hassa - Buraidah - Hafar al Batin - Refah - Skaka - Khamis
+                            Mashiet - Makkah - Madinah
+                        </span>
+                        <br/>
+                        <span style="margin-bottom:100px;font-size:14px;font-weight:bold;">Telephone: +966 13
+                            8088868, Email ID:
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='page']/h2" position="replace">
+            <div t-attf-class="text-center" style="padding-top:30px;padding-bottom:15px;font-weight:bold;font-size:25px;color: #032D7A;">
+                <h2>
+                    <strong t-if="o.move_type in ('out_invoice', 'in_invoice') and o.state == 'posted'">Tax Invoice
+                    </strong>
+                    <strong t-if="o.move_type in ('out_invoice', 'in_invoice') and o.state == 'draft'">Draft Tax
+                        Invoice
+                    </strong>
+                    <strong t-if="o.move_type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</strong>
+                    <strong t-if="o.move_type == 'out_refund' and o.state == 'posted'">Credit Note</strong>
+                    <strong t-if="o.move_type == 'out_refund' and o.state == 'draft'">Draft Credit Note</strong>
+                    <strong t-if="o.move_type == 'in_refund' and o.state == 'posted'">Vendor Credit Note</strong>
+                    <strong t-if="o.move_type == 'in_refund' and o.state == 'draft'">Draft Vendor Credit Note</strong>
+                </h2>
+            </div>
+
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="replace">
+            <div id="new_informations" class="row" style="padding:0px;">
+                <div class="col-7" style="font-size:12px; color: #032D7A;" align="left">
+                    <div class="row info" style="height:50px;">
+                        <div style="font-size:16px;padding:0px;padding-left:17px;font-weight:300;" class="col-4">
+                            <strong>Customer Name</strong>
+                        </div>
+                        <div style="font-size:14px;color:black;font-weight:600;padding:0px;padding-top:3px;" class="col-5">
+                            <span t-field="o.partner_id"/>
+                        </div>
+                        <div align="right" style="font-weight:300;font-size:14px;" class="col-3">
+                            <strong>اسم العميل</strong>
+                        </div>
+                    </div>
+                    <div class="row info" style="height:50px;">
+                        <div style="font-weight:300;padding-left:17px;" class="col-4">
+                            <strong style="">Address</strong>
+                        </div>
+                        <div style="font-size:12px;color:black;padding:0px;padding-top:5px;font-weight:600;" align="left" class="col-5">
+                            <span align="left" t-field="o.partner_id.street"/>
+                            <t t-if="o.partner_id.street"><span >,</span></t>
+                            <span align="left" t-field="o.partner_id.street2"/>
+                            <t t-if="o.partner_id.street2"><span >,</span></t>
+                            <span align="left" t-field="o.partner_id.city"/>
+                            <t t-if="o.partner_id.city"><span >,</span></t>
+                            <span align="left" t-field="o.partner_id.state_id"/>
+                            <t t-if="o.partner_id.state_id"><span >,</span></t>
+                            <span align="left" t-field="o.partner_id.zip"/>
+                            <t t-if="o.partner_id.zip"><span >,</span></t>
+                            <span align="left" t-field="o.partner_id.country_id"/>
+                        </div>
+                        <div align="right" style="font-weight:300;" class="col-3">
+                            <strong>عنوان</strong>
+                        </div>
+                    </div>
+                    <div class="row info">
+                        <div style="font-weight:300;padding-left:17px;" class="col-4">
+                            <strong style="">Vat No.</strong>
+                        </div>
+                        <div align="left" style="font-size:12px;padding:0px;padding-top:5px;font-weight:600;color:black;" class="col-5">
+                            <span align="left" t-field="o.partner_id.vat"/>
+                        </div>
+                        <div align="right" style="font-weight:300;" class="col-3">
+                            <strong>رقم الضريبة</strong>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-5" style="font-size:12px;color : #032D7A;" align="left">
+                    <div align="left" style=" width: 100%;">
+                        <div class="row info">
+                            <div style="font-weight:300;padding:0px;padding-top:5px;'" class="col-3">
+                                <strong style="">Issue Date:</strong>
+                            </div>
+                            <div style="padding:0px;padding-top:3px;font-size:12px;color:black;font-weight:600;"
+                                 class="col-4">
+                                <span align="left" t-field="o.invoice_date"/>
+                            </div>
+                            <div align="right" style="font-weight:300;" class="col-5">
+                                <strong align="right" style="">تاريخ الاصدار</strong>
+                            </div>
+
+                        </div>
+                        <div class="row info">
+                            <div style="font-weight:300;padding:0px;padding-top:5px;" class="col-3">
+                                <strong style="">DO No.</strong>
+                            </div>
+                            <div style="font-size:12px;color:black;font-weight:600;padding:0px;padding-top:5px;" class="col-4">
+                                <span align="left" t-field="o.po_no"/>
+                            </div>
+                            <div align="right" style="font-weight:300;" class="col-5">
+                                <strong align="right" style="">رقم أمر التسليم</strong>
+                            </div>
+
+                        </div>
+                        <div class="row info">
+                            <div style="font-weight:300;padding:0px;padding-top:5px;" class="col-3">
+                                <strong style="">Invoice No.</strong>
+                            </div>
+                            <div style="font-size:10px;padding:0px;padding-top:5px;font-weight:600;color:black;" class="col-4">
+                                <span align="left" t-field="o.name"/>
+                            </div>
+                            <div align="right" style="font-weight:300;" class="col-5">
+                                <strong align="right" style="">رقم الفاتورة</strong>
+                            </div>
+
+                        </div>
+                        <div class="row info">
+                            <div style="font-weight:300;padding:0px;padding-top:5px;" class="col-3">
+                                <strong style="">Due Date</strong>
+                            </div>
+                            <div style="font-size:12px;padding:0px;padding-top:5px;font-weight:600;color:black;" class="col-4">
+                                <span align="left" t-field="o.invoice_payment_term_id"/>
+                            </div>
+                            <div align="right" style="font-weight:300;" class="col-5">
+                                <strong align="right" style="">تاريخ الاستحقاق</strong>
+                            </div>
+
+                        </div>
+                        <div class="row info">
+                            <div style="font-weight:300;padding:0px;padding-top:5px;" class="col-3">
+                                <strong style="">Cust. CR. No.</strong>
+                            </div>
+                            <div style="font-size:12px;color:black;font-weight:600;padding:0px;padding-top:5px;" class="col-4">
+                                <span align="left" t-field="o.partner_id.c_r"/>
+                            </div>
+                            <div align="right" style="font-weight:300;" class="col-5">
+                                <strong style="">السحل التجاري</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </xpath>
+
+        <xpath expr="//table[1]" position="before">
+            <style>
+                div#total > div > table > tr{
+                border:2px solid black;
+                }
+
+
+                table.my_tab > thead{
+                background-color: #F1E8D4 ;
+
+
+                }
+
+                table.my_tab > thead > tr > th{
+                padding:0px;
+                border:2px solid black;
+                color : #032D7A;
+                font-size : 13px;
+                text-align: center;
+                vertical-align: middle;
+                }
+
+                table.my_tab > tbody{
+                <!--                border:2px solid black;-->
+                font-size : 12px;
+                font-weight:bold;
+
+                }
+
+
+                table.my_tab > tbody > tr > td{
+                margin:0px;
+                padding:0px;
+                padding-left:2px;
+                padding-right:2px;
+                padding-top : 2px;
+                padding-bottom:15px;
+                border:none;
+                border-bottom:2px solid black;
+                height:5px;
+                }
+
+                table.my_tab > tfoot{
+                border:2px solid black;
+                background-color: #F1E8D4;
+                color : #032D7A;
+                }
+
+                table.my_tab > tfoot > tr > td{
+                text-align: left;
+                padding:0px;
+                padding-left:2px;
+                padding-right:2px;
+                border:2px solid black;
+                font-size : 13px bold;
+
+                }
+
+                th[name="th_no"]{
+                width:5%;
+                }
+                th[name="th_code"]{
+                width:15%;
+                }
+                th[name="th_description"]{
+                width:39%;
+                }
+                th[name="th_quantity"]{
+                width:11.5%;
+                }
+                th[name="th_price_unit"]{
+                width:12%;
+                }
+                th[name="th_amount"]{
+                width:17.5%;
+                }
+
+                .info{
+                height:25px;
+                }
+
+
+            </style>
+
+        </xpath>
+
+        <xpath expr="//table[1]" position="attributes">-->
+            <attribute name="class">table my_tab</attribute>
+        </xpath>
+
+
+        <xpath expr="//table[1]/thead[1]" position="replace">
+            <thead class="text-center" style="height:100px;">
+                <tr>
+                    <th style="border-left:none;" name="th_no">
+                        <strong>Ser</strong>
+                    </th>
+                    <th name="th_code">
+                        <strong>Code (SKU).</strong>
+                    </th>
+                    <th name="th_description">
+                        <strong>Item Description</strong>
+                    </th>
+                    <th name="th_quantity">
+                        <strong>Qty</strong>
+                    </th>
+                    <th name="th_price_unit">
+                        <strong>Unit Price exc. VAT</strong>
+                    </th>
+                    <th name="th_amount">
+                        <strong>Total Price exc. Vat</strong>
+                    </th>
+                    <th name="th_vat_percent">
+                        <strong>VAT %</strong>
+                    </th>
+                    <th name="th_vat_amount">
+                        <strong>VAT SAR</strong>
+                    </th>
+                    <th style="border-right:none;" name="th_total_amount">
+                        <strong>Total SAR</strong>
+                    </th>
+                </tr>
+                <tr style="">
+                    <th style="border-left:none;" name="th_no_ar">
+                        <strong>التسلسل</strong>
+                    </th>
+                    <th name="th_code_ar">
+                        <strong>رمز البند</strong>
+                    </th>
+                    <th name="th_description_ar">
+                        <strong>وصف البند</strong>
+                    </th>
+                    <th name="th_quantity_ar">
+                        <strong>الكمية</strong>
+                    </th>
+                    <th name="th_price_unit_ar">
+                        <strong>سعر الوحدة بدون ضريبة القيمة المضافة</strong>
+                    </th>
+                    <th name="th_amount_ar">
+                        <strong>إجمالي السعر بدون ضريبة القيمة المضافة</strong>
+                    </th>
+
+                    <th name="th_vat_percent_ar">
+                        <strong>النسبة المئوية لضريبة القيمة المضافة</strong>
+                    </th>
+                    <th name="th_vat_amount_ar">
+                        <strong>ضريبة القيمة المضافة بالريال السعودي</strong>
+                    </th>
+                    <th style="border-right:none;" name="th_total_amount_ar">
+                        <strong>اجمالي المبلغ بالريال السعودي</strong>
+                    </th>
+                </tr>
+            </thead>
+        </xpath>
+
+        <xpath expr="//table[1]/tbody" position="replace">
+            <tbody style="height:150px;border-left:none;border-right:none;">
+                <t t-set="current_subtotal" t-value="0"/>
+                <t t-set="i" t-value="1"/>
+                <t t-set="total_quantity" t-value="0"/>
+                <t t-set="subtotal_amountt" t-value="0"/>
+                <t t-set="total_vat" t-value="0"/>
+                <t t-foreach="o.invoice_line_ids" t-as="line">
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"
+                       groups="account.group_show_line_subtotals_tax_excluded"/>
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"
+                       groups="account.group_show_line_subtotals_tax_included"/>
+                    <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                        <t t-if="not line.display_type">
+                            <td id="sequence" style="text-align:center;border-left:none;">
+                                <t t-foreach="line" t-as="p">
+                                    <span t-esc="i"/>
+                                    <t t-set="i" t-value="i+1"/>
+                                </t>
+                            </td>
+                            <td id="code">
+                                <span t-field="line.product_id.default_code"/>
+                            </td>
+                            <td id="description">
+                                <span t-field="line.name"/>
+                            </td>
+
+                            <td class="text-right">
+                                <span t-field="line.quantity"/>
+                                <!--                                <span t-field="line.product_uom.name" groups="uom.group_uom"/>-->
+                                <t t-set="total_quantity" t-value="total_quantity+line.quantity"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.price_unit"
+                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="line.price_subtotal"
+                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                <t t-set="subtotal_amountt" t-value="subtotal_amountt+line.price_subtotal"/>
+                            </td>
+                            <td class="text-right">
+
+                                <t t-set="inline_vat" t-value="0"/>
+                                <t t-foreach="line.tax_ids" t-as="tax_rec">
+                                    <t t-esc="tax_rec.name"/>
+                                    <t t-set="inline_vat"
+                                       t-value="inline_vat+((tax_rec.amount*line.price_subtotal)/100)"/>
+                                    <t t-set="total_vat"
+                                       t-value="total_vat+((tax_rec.amount*line.price_subtotal)/100)"/>
+                                </t>
+                            </td>
+                            <td class="text-right">
+                                <t t-if="inline_vat != 0">
+                                    <span t-esc="inline_vat"
+                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </t>
+                            </td>
+                            <td style="border-left:none;" class="text-right">
+                                <t t-set="total_price_taxed" t-value="line.price_subtotal+inline_vat"/>
+                                <t t-esc="total_price_taxed"
+                                   t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+
+                            </td>
+
+                        </t>
+
+                    </tr>
+                </t>
+            </tbody>
+        </xpath>
+
+        <xpath expr="//div[@class='clearfix']" position="replace">
+            <div class="clearfix" name="so_total_summary" style="">
+                <div id="total" class="row" name="total">
+                    <div t-attf-class="#{'col-3' if report_type != 'html' else 'col-sm-7 col-md-6'}"  style="background-color:#FFF">
+                        <t t-esc="o.generate_qr_code()"/>
+                        <img t-att-src="image_data_uri(o.qr_code)" style="max-height: 150px;" alt="QR Code"/>
+                    </div>
+                    <div t-attf-class="#{'col-9' if report_type != 'html' else 'col-sm-7 col-md-6'}">
+                        <table name="total_table" class="table table-sm" style="font:13px bold;text-align:right;">
+                            <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)"/>
+                            <tr>
+                                <td style="border:1px solid gray; width:25%;">
+                                    <strong style="display:block;">Total Qty.</strong>
+                                    <span>اجمالي الكمية</span>
+                                </td>
+                                <td style="text-align:right;background-color: #F1E8D4;border:1px solid gray;width:15%;">
+                                    <t t-esc="total_quantity"/>
+                                </td>
+                                <td style="border:1px solid gray;width:40%;">
+                                    <strong style="display:block;">Total Execl. VAT</strong>
+                                    <span>اجمالي مبلغ الفاتورة بدون ضريبة القيمة المضافة</span>
+                                </td>
+                                <td style="text-align:right;background-color: #F1E8D4;border:1px solid gray;width:20%;">
+                                    <t t-esc="subtotal_amountt"
+                                       t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td style="text-align:right;">
+                                </td>
+                                <td style="border:1px solid gray;">
+                                    <strong style="display:block;">VAT</strong>
+                                    <span>ضريبة القيمة المضافة</span>
+                                </td>
+                                <td style="text-align:right;background-color: #F1E8D4;border:1px solid gray;">
+                                    <t t-esc="total_vat"
+                                       t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">
+                                </td>
+                                <td style="border:none;">
+                                </td>
+                                <td style="border:1px solid gray;">
+                                    <strong style="display:block;">Total Inc. VAT</strong>
+                                    <span>اجمالي مبلغ الفاتورة شاملا ضريبة القيمة المضافة</span>
+                                </td>
+
+                                <td style="text-align:right;background-color: #F1E8D4;border:1px solid gray;">
+                                    <t t-esc="tax_totals['formatted_amount_total']"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </xpath>
+
+        <xpath expr="//p[@name='payment_communication']" position="replace">
+
+        </xpath>
+        <xpath expr="//p[@name='payment_term']" position="replace">
+
+        </xpath>
+        <xpath expr="//div[@name='comment']" position="replace">
+
+        </xpath>
+        <xpath expr="//p[@name='note']" position="replace">
+
+        </xpath>
+        <xpath expr="//p[@name='incoterm']" position="replace">
+
+        </xpath>
+
+
+    </template>
+
+
+</odoo>

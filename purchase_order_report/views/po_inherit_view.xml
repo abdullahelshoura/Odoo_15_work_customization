@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="po_inherit_form" model="ir.ui.view">
+            <field name="name">p.o.inherit.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="commission_import.purchase_commission_import_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='commission_import']" position="after">
+                    <field name="week_number" invisible="1"/>
+                    <field name="remarks" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
